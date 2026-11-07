@@ -28,7 +28,7 @@ const BRAND = "POLSKI TV";
 // Must match index.html exactly — these are the anchors the template is patched on.
 const TPL_HTML_TAG = '<html lang="de">';
 const TPL_CANONICAL = `<link rel="canonical" href="${SITE}/" />`;
-const TPL_TITLE = "<title>IPTV Deutschland kaufen | Premium IPTV Anbieter</title>";
+const TPL_TITLE = "<title>POLSKI TV | IPTV Polska — Polski IPTV 4K/8K</title>";
 
 const template = readFileSync(resolve(DIST, "index.html"), "utf8");
 
@@ -450,16 +450,30 @@ for (const tLang of HOME_LANGS) {
 
 // ---- homepage (per language) -----------------------------------------------
 const HOME_TITLE: Record<string, string> = {
+  pl: "POLSKI TV | IPTV Polska — Polski IPTV 4K/8K",
   de: "IPTV Deutschland kaufen | Premium IPTV Anbieter",
   en: "IPTV Germany | Buy German IPTV — Premium IPTV Provider",
   nl: "POLSKI TV | Premium IPTV Abonnement & 4K Zenders",
 };
 const HOME_DESC: Record<string, string> = {
+  pl: "Polski IPTV z POLSKI TV: 69 000+ kanałów na żywo i 220 000+ filmów i seriali w jakości do 8K. IPTV na Smart TV, Androida i Fire TV, bez umowy. ★ 4.9/5",
   de: "IPTV Deutschland kaufen bei Ihrem Premium IPTV Anbieter: 69.000+ Live-Sender, 220.000+ Filme & Serien in bis zu 8K. IPTV Abo für Smart TV, Android & Fire TV — ohne Vertrag.",
   en: "IPTV Germany made simple: buy German IPTV from a premium IPTV provider. 69,000+ live channels, 220,000+ movies & series in up to 8K. Works on Smart TV, Android & Fire TV.",
   nl: "POLSKI TV op www.polskitv.com: premium IPTV-abonnement. 69.000+ live zenders, 220.000+ films & series in tot 8K. IPTV kopen voor Smart TV, Android & Fire TV.",
 };
 const HOME_BODY: Record<string, string[]> = {
+  pl: [
+    `<h1>Polski IPTV — POLSKI TV Premium IPTV 4K/8K</h1>`,
+    `<p>POLSKI TV to Twój dostawca premium IPTV: kupując polski IPTV otrzymujesz ponad 69 000 kanałów na żywo i 220 000 filmów i seriali na żądanie w jakości do 8K Ultra HD. Abonament IPTV zastępuje telewizję kablową oraz Netflix, Disney+ i pakiet sportowy, w przejrzystej cenie i bez umowy. Działa na Smart TV, Androidzie, Fire TV, dekoderach MAG i innych urządzeniach.</p>`,
+    `<h2>Dlaczego warto wybrać POLSKI TV?</h2>`,
+    `<ul>`,
+    `<li>69 000+ kanałów na żywo z Polski i całej Europy, w tym Ekstraklasa i Liga Mistrzów</li>`,
+    `<li>220 000+ filmów i seriali VOD, aktualizowane co tydzień</li>`,
+    `<li>Jakość obrazu do 8K Ultra HD</li>`,
+    `<li>Bez umowy, aktywacja w kilka minut i wsparcie przez WhatsApp</li>`,
+    `</ul>`,
+    `<p>Polski IPTV jeszcze nigdy nie był tak prosty: wybierz plan, zapłać bezpiecznie i oglądaj w mniej niż 5 minut.</p>`
+  ],
   de: [
     `<h1>IPTV Deutschland kaufen — Premium IPTV Abo bei Ihrem IPTV Anbieter</h1>`,
     `<p>POLSKI TV ist Ihr Premium IPTV Anbieter für Deutschland: Wer IPTV kaufen möchte, bekommt hier über 69.000 Live-Sender und 220.000 Filme und Serien als Video-on-Demand — in bis zu 8K Ultra HD. Ein IPTV Abo ersetzt Kabel plus Netflix, Disney+ und ein Sportpaket, zu einem transparenten Preis und ohne Vertrag. Kompatibel mit Smart TV, Android, Fire TV, MAG-Boxen und weiteren Geräten.</p>`,

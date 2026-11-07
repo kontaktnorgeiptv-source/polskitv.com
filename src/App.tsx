@@ -35,7 +35,7 @@ const NOT_INDEXABLE = "noindex, follow";
 const payAlt: Record<string, string> = { de: "Akzeptierte Zahlungsmethoden", en: "Accepted payment methods", nl: "Geaccepteerde betaalmethoden" };
 const socialHeading: Record<string, string> = { de: "SOZIALE MEDIEN", en: "SOCIAL MEDIA", nl: "SOCIALE MEDIA" };
 
-const HOME_LANGS = ["de", "nl", "en"] as const;
+const HOME_LANGS = ["de", "nl", "en", "pl"] as const;
 type HomeLang = (typeof HOME_LANGS)[number];
 
 function isHomeLang(s: string): s is HomeLang {
@@ -54,7 +54,7 @@ type View =
 /** Extract the optional /{lang} prefix and the remaining path. */
 function parsePath(): { lang: HomeLang | null; rest: string } {
   const raw = window.location.pathname.replace(/\/+$/, "") || "/";
-  const m = raw.match(/^\/(de|nl|en)(\/.*)?$/);
+  const m = raw.match(/^\/(de|nl|en|pl)(\/.*)?$/);
   if (m) return { lang: m[1] as HomeLang, rest: m[2]?.replace(/\/+$/, "") || "/" };
   return { lang: null, rest: raw };
 }
@@ -109,9 +109,9 @@ function GeoRedirect() {
         if (c === "GB" || c === "IE" || c === "US") window.location.replace("/en");
         else if (c === "NL" || c === "BE") window.location.replace("/nl");
         // Germany/DACH is the default market: everything else lands on /de.
-        else window.location.replace("/de");
+        else window.location.replace("/pl");
       })
-      .catch(() => window.location.replace("/de"));
+      .catch(() => window.location.replace("/pl"));
   }, []);
 
   return (

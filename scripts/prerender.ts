@@ -157,8 +157,7 @@ function hreflangSet(pathSuffix: string): HreflangLink[] {
 }
 
 function langToPrefix(lang: string): string {
-  if (lang === "de" || lang === "nl" || lang === "en") return `/${lang}`;
-  return "/en";
+  return lang ? `/${lang}` : "/en";
 }
 
 function postUrl(slug: string, lang?: string): string {
@@ -332,7 +331,7 @@ const BLOG_DESC: Record<string, string> = {
 
 // German is the default market, so every core page (home/blog/agb) is
 // prerendered in German first, with Dutch and English as the alternate markets.
-const HOME_LANGS = ["de", "nl", "en"];
+const HOME_LANGS = ["de", "nl", "en", "pl"];
 
 for (const blogLang of HOME_LANGS) {
   const prefix = langToPrefix(blogLang);

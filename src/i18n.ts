@@ -1,7 +1,7 @@
 export type LangCode = 'fi' | 'en' | 'fr' | 'da' | 'ar' | 'de' | 'es' | 'it' | 'nl' | 'sv' | 'no' | 'pl' | 'pt' | 'ro' | 'cs' | 'tr';
 
 /** The one language the site is published in. Germany/DACH is the default market. */
-export const SITE_LANG: LangCode = 'en';
+export const SITE_LANG: LangCode = 'pl';
 
 /**
  * Languages offered in the header switcher: German (the published site language),
